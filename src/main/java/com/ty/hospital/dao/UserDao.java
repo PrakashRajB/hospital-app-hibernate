@@ -33,7 +33,7 @@ public class UserDao {
 
 		Query query = entityManager.createQuery(jqpl);
 		query.setParameter(1, email);
-		query.setParameter(2, AES.encrypt(password));
+		query.setParameter(2, password);
 
 		List<User> users = query.getResultList();
 		return users.isEmpty() ? false : true;
